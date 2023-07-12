@@ -3,7 +3,26 @@ import 'package:count_app/banana_counter.dart';
 
 void main() {
 
-  const col = Column(
+  hoge(){
+    debugPrint("これから通信を始めます");
+    debugPrint("通信中");
+    debugPrint("通信が終わりました");
+  }
+
+
+
+
+  final button = ElevatedButton(
+      onPressed: hoge(),
+      style: ElevatedButton.styleFrom(
+        shape: const StadiumBorder(),
+      ),
+      child: const Text("ボタン"),
+  );
+
+
+
+  final col = Column(
 
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -12,9 +31,11 @@ void main() {
       // Image.asset("assets/images/penguin.jpg"),
       // Image.network("https://flutter-image-network.web.app/inu.jpeg"),
 
-      BananaCounter(
-        number: 888,
-      )
+      // BananaCounter(
+      //   number: 888,
+      // )
+
+      button
     ]
   );
 
