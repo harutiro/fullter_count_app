@@ -3,17 +3,28 @@ import 'package:count_app/banana_counter.dart';
 
 void main() {
 
+  final controller = TextEditingController();
+
   hoge(){
-    debugPrint("これから通信を始めます");
-    debugPrint("通信中");
-    debugPrint("通信が終わりました");
+    print(controller.text);
   }
+
+  final textFiled = TextField(
+    controller: controller,
+    decoration: const InputDecoration(
+      border: OutlineInputBorder(),
+      labelText: "名前",
+      hintText: "名前を入力してください",
+    ),
+  );
 
 
 
 
   final button = ElevatedButton(
-      onPressed: hoge(),
+      onPressed: (){
+        hoge();
+      },
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
       ),
@@ -35,12 +46,13 @@ void main() {
       //   number: 888,
       // )
 
-      button
+      button,
+      textFiled
     ]
   );
 
   final con = Container(
-    color: Colors.blue,
+    color: Colors.orange,
     width: 600,
     height: 600,
     padding: const EdgeInsets.all(10),
